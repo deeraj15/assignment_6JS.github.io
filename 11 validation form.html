@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script>
+        function validateForm() {
+            var username = document.getElementById('user').value;
+            var password = document.getElementById('pass').value;
+            var confirmPassword = document.getElementById('confirmPass').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var pinCode = document.getElementById('pinCode').value;
+            var validationResult = "";
+
+            if (username.length < 8) {
+                validationResult += "Username should be at least 8 characters.\n";
+            }
+
+            if (password.length < 8) {
+                validationResult += "Password should be at least 8 characters.\n";
+            }
+
+            if (password !== confirmPassword) {
+                validationResult += "Passwords do not match.\n";
+            }
+
+            if (phoneNumber.length > 10) {
+                validationResult += "Phone number should be at most 10 digits.\n";
+            }
+
+            if (pinCode.length > 6) {
+                validationResult += "Pin code should be at most 6 digits.\n";
+            }
+
+            if (validationResult === "") {
+                window.location.href =" https://deeraj15.github.io/c_hci_batch_18.github.io/";
+            } else {
+                window.alert(validationResult);
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Registration Form</h1>
+        <form>
+            Enter username: <input type="text" id="user"><br><br>
+            Enter password: <input type="password" id="pass"><br><br>
+            Confirm password: <input type="password" id="confirmPass"><br><br>
+            Enter phone number: <input type="text" id="phoneNumber"><br><br>
+            Enter pin code: <input type="text" id="pinCode"><br><br>
+            <button type="button" onclick="validateForm()">Register</button>
+        </form>
+    </center>
+</body>
+</html>
